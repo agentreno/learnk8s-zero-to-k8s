@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: zero-to-k8s
+  name: first-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: zero-to-k8s
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: zero-to-k8s
+    spec:
+      containers:
+      - image: zero-to-k8s:2.0.0
+        name: zero-to-k8s
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+        resources: {}

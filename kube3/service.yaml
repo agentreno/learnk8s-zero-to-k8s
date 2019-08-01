@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: zero-to-k8s
+  name: service
+spec:
+  ports:
+  - name: zero-to-k8s
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: zero-to-k8s
+  type: ClusterIP

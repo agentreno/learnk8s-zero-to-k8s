@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: first-ingress
+  labels:
+    app: zero-to-k8s
+spec:
+  rules:
+  - host: demov2.local
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: first-service
+          servicePort: 3000

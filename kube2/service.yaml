@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: zero-to-k8s
+  name: first-service
+spec:
+  ports:
+  - name: first-service
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: zero-to-k8s
+  type: ClusterIP
+status:
+  loadBalancer: {}
